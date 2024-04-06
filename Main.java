@@ -9,9 +9,17 @@ public class Main {
 
         double[] grades = new double[numOfSubjects];
 
-        for (int i = 0; i < numOfSubjects; i++) {
-            System.out.println("Podaj ocenę z przedmiotu " + (i + 1) + ":");
-            grades[i] = scanner.nextDouble();
+        for (int i = 0; i < n6umOfSubjects; i++) {
+            double grade;
+
+            do {
+                System.out.println("Podaj ocenę z przedmiotu " + (i + 1) + ":");
+                grade = scanner.nextDouble();
+                if (grade <= 0 || grade >= 6) {
+                    System.out.println("Wpisz ocene od 1 do 6 Polskie szkolnictwo...");
+                }
+            } while (grade <= 0 || grade >= 6);
+            grades[i] = grade;
         }
 
         System.out.println("Oceny z przedmiotów:");
